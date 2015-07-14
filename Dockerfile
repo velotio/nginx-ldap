@@ -2,7 +2,7 @@ FROM debian:wheezy
 
 MAINTAINER Henrik Sachse <t3x7m3@posteo.de>
 
-ENV NGINX_VERSION v1.7.10
+ENV NGINX_VERSION release-1.7.12
 
 RUN apt-get update \
 	&& apt-get install -y \
@@ -21,9 +21,9 @@ RUN mkdir /var/log/nginx \
 	&& cd ~ \
 	&& git clone https://github.com/kvspb/nginx-auth-ldap.git \
 	&& git clone https://github.com/nginx/nginx.git \
-	&& cd nginx \
+	&& cd ~/nginx \
 	&& git checkout tags/${NGINX_VERSION} \
-	&& ./configure \
+	&& ./auto/configure \
 		--add-module=/root/nginx-auth-ldap \
 		--with-http_ssl_module \
 		--with-debug \
