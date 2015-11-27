@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM debian:jessie
 
 MAINTAINER Henrik Sachse <t3x7m3@posteo.de>
 
@@ -13,7 +13,8 @@ RUN apt-get update \
 		libpcre3-dev \
 		zlib1g-dev \
 		libldap2-dev \
-		libssl-dev
+		libssl-dev \
+		wget
 
 # See http://wiki.nginx.org/InstallOptions
 RUN mkdir /var/log/nginx \
@@ -35,8 +36,11 @@ RUN mkdir /var/log/nginx \
 	&& make install \
 	&& cd .. \
 	&& rm -rf nginx-auth-ldap \
-	&& rm -rf nginx 
+	&& rm -rf nginx \
+	&& wget -O /tmp/dockerize.tar.gz https://github.com/jwilder/dockerize/releases/download/v0.0.4/dockerize-linux-amd64-v0.0.4.tar.gz \
+	&& tar -C /usr/local/bin -xzvf /tmp/dockerize.tar.gz \
+	&& rm -rf /tmp/dockerize.tar.gz
 
 EXPOSE 80 443
 
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+CMD ["dockerize","-stdout","/var/log/nginx/access.log","-stderr","/var/log/nginx/error.log","/usr/sbin/nginx","-g","daemon off;"]
