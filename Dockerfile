@@ -4,7 +4,8 @@ MAINTAINER Henrik Sachse <t3x7m3@posteo.de>
 
 ENV NGINX_VERSION release-1.9.6
 
-RUN apt-get update \
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
+	&& apt-get update \
 	&& apt-get install -y \
 		ca-certificates \
 		git \
