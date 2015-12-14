@@ -44,4 +44,5 @@ RUN mkdir /var/log/nginx \
 
 EXPOSE 80 443
 
-CMD ["dockerize","-stdout","/var/log/nginx/access.log","-stderr","/var/log/nginx/error.log","/usr/sbin/nginx","-g","daemon off;"]
+COPY run.sh /run.sh
+CMD ["/run.sh"]
