@@ -2,7 +2,7 @@ FROM debian:jessie
 
 MAINTAINER Henrik Sachse <t3x7m3@posteo.de>
 
-ENV NGINX_VERSION release-1.9.6
+ENV NGINX_VERSION release-1.11.3
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
 	&& apt-get update \
