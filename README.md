@@ -1,3 +1,4 @@
+[![](https://images.microbadger.com/badges/image/h3nrik/nginx-ldap.svg)](http://microbadger.com/images/h3nrik/nginx-ldap "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/h3nrik/nginx-ldap.svg)](http://microbadger.com/images/h3nrik/nginx-ldap "Get your own version badge on microbadger.com")
 # ![NGINX logo](https://raw.github.com/g17/nginx-ldap/master/images/NginxLogo.gif)
 
 ## Introduction
