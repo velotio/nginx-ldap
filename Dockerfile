@@ -38,6 +38,14 @@ RUN mkdir /var/log/nginx \
 		--error-log-path=/var/log/nginx/error.log \ 
 		--http-log-path=/var/log/nginx/access.log \
         --with-stream \
+        --with-stream_ssl_module \
+        --with-debug \
+        --with-file-aio \
+        --with-threads \
+        --with-http_gunzip_module \
+        --with-http_gzip_static_module \
+        --with-http_v2_module \
+        --with-http_auth_request_module \
 	&& make install \
 	&& cd .. \
 	&& rm -rf nginx-auth-ldap \
