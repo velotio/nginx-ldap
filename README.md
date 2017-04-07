@@ -27,7 +27,7 @@ To run an instance with your own static page run:
 
 ### Setting up an LDAP container
 
-For the following chapters you can set up a container providing a test LDAP installation. But the intention is of course to connect to an existing user directory like *OpenLDAP* or *Active Directory* at the end. They can be either running as Docker containers or as a dedicated server. Therefore you might want to use an [ambassador container](http://docs.docker.com/articles/ambassador_pattern_linking/).
+For the following chapters you can set up a container providing a test LDAP installation. But the intention is of course to connect to an existing user directory like *OpenLDAP* or *Active Directory* at the end. They can be either running as Docker containers or as a dedicated server. Therefore you might want to use an [ambassador container](https://docs.docker.com/engine/admin/ambassador_pattern_linking/).
 
 Follow these steps to set up an LDAP test container:
 
